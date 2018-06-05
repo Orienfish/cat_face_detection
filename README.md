@@ -25,7 +25,8 @@ sudo ./test_cat.sh
 # Run it in any path. Monitor from 162.105.93.130:6099
 sudo ./tensorboard.sh
 ```
-
+训练过程中tensorboard记录如下。
+![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/losses.png)
 7. 训练结束后将checkpoint文件导出为模型，参考官方文档[Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md).
 ```
 # Copy file to tensorflow/models/research directory and run it
