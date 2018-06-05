@@ -54,6 +54,8 @@ sudo ./export.sh
 # Copy file to tensorflow/models/research/object_detection directory and run it
 sudo python my_object_detection.py
 ```
+识别效果如下。 <br>
+![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg)
 
 ## 目录结构描述
 ```
