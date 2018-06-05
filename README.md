@@ -1,22 +1,22 @@
 # cat_face_detection
-调用tensorflow的object detection模块，利用自己的制作的数据集，基于已有的ssd_mobilenet_coco_v1模型训练猫脸识别的网络，能够识别猫脸和猫眼。  
-项目的最终应用是微信小程序中能够对猫脸进行美化、加装饰物等操作。  
+调用tensorflow的object detection模块，利用自己的制作的数据集，基于已有的ssd_mobilenet_coco_v1模型训练猫脸识别的网络，能够识别猫脸和猫眼。<br>
+项目的最终应用是微信小程序中能够对猫脸进行美化、加装饰物等操作。<br>
 可能借鉴人脸特征点识别进而探讨猫脸特征点标注。
 
 ## 环境配置
-Ubuntu 16.04 LTS
-Python 2.7.12
-tensorflow 1.6.0
-Protobuf 3.5.1
-pandas 0.21.0
-matplotlib 2.1.0
-Cython 0.28.2
-pillow 3.1.2
-lxml 3.5.0
-jupyter 1.0.0
+Ubuntu 16.04 LTS <br>
+Python 2.7.12 <br>
+tensorflow 1.6.0 <br>
+Protobuf 3.5.1 <br>
+pandas 0.21.0 <br>
+matplotlib 2.1.0 <br>
+Cython 0.28.2 <br>
+pillow 3.1.2 <br>
+lxml 3.5.0 <br>
+jupyter 1.0.0 <br>
 
-CUDA 9.0.176
-CuDNN 7.0
+CUDA 9.0.176 <br>
+CuDNN 7.0 <br>
 GPU配置：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 
 ## 搭建步骤
