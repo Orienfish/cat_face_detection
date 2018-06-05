@@ -3,6 +3,9 @@
 项目的最终应用是微信小程序中能够对猫脸进行美化、加装饰物等操作。
 可能借鉴人脸特征点识别进而探讨猫脸特征点标注。
 
+## 环境配置
+Ubuntu 16.04 LTS
+
 ## 搭建步骤
 1. 配置Tensorflow Object Detection API环境，参考官方文档[Installation](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).  
 2. 下载数据。Kaggle官网上有一个[Dogs vs. Cats](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md)数据集，
@@ -26,7 +29,8 @@ sudo ./test_cat.sh
 sudo ./tensorboard.sh
 ```
 训练过程中tensorboard记录如下。
-![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/losses.png)
+![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/losses.png).  
+
 7. 训练结束后将checkpoint文件导出为模型，参考官方文档[Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md).
 ```
 # Copy file to tensorflow/models/research directory and run it
@@ -67,3 +71,9 @@ sudo python my_object_detection.py
     ├── evallog                // 测试tensorboard event记录, EVAL_DIR
     └── exported_model         // 从trainlog中的checkpoint中导出来的模型，EXPORT_DIR
 ```
+
+## 版本说明
+v1 @2018.6.5
+当前版本使用80张图片进行训练，20张图片进行测试。  
+由于一些莫名奇妙的bug都导致只进行了训练而没有运行测试，因此training/evallog文件夹中空空如也= =。  
+训练30k次耗时7h21min。
