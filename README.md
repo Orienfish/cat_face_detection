@@ -5,6 +5,19 @@
 
 ## 环境配置
 Ubuntu 16.04 LTS
+Python 2.7.12
+tensorflow 1.6.0
+Protobuf 3.5.1
+pandas 0.21.0
+matplotlib 2.1.0
+Cython 0.28.2
+pillow 3.1.2
+lxml 3.5.0
+jupyter 1.0.0
+
+CUDA 9.0.176
+CuDNN 7.0
+GPU配置：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 
 ## 搭建步骤
 1. 配置Tensorflow Object Detection API环境，参考官方文档[Installation](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).  
