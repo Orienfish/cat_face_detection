@@ -1,6 +1,6 @@
 # cat_face_detection
-调用tensorflow的object detection模块，利用自己的制作的数据集，基于已有的ssd_mobilenet_coco_v1模型训练猫脸识别的网络，能够识别猫脸和猫眼。
-项目的最终应用是微信小程序中能够对猫脸进行美化、加装饰物等操作。
+调用tensorflow的object detection模块，利用自己的制作的数据集，基于已有的ssd_mobilenet_coco_v1模型训练猫脸识别的网络，能够识别猫脸和猫眼。  
+项目的最终应用是微信小程序中能够对猫脸进行美化、加装饰物等操作。  
 可能借鉴人脸特征点识别进而探讨猫脸特征点标注。
 
 ## 环境配置
