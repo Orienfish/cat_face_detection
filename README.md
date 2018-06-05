@@ -15,6 +15,7 @@
 8. 测试测试！生成的图片在result文件里。
 
 ## 目录结构描述
+```
 ├── README.md                   // help <br>
 ├── generate_tfrecord.sh        // 一次完成从xml文件转换为tfRecord的脚本，在本文件夹直接调用 <br>
 ├── xml_to_csv.py               // generate_tfrecord.sh调用的python程序 <br>
@@ -41,3 +42,4 @@
     ├── trainlog               // 训练checkpoint记录和tensorboard event记录, TRAIN_DIR <br>
     ├── evallog                // 测试tensorboard event记录, EVAL_DIR <br>
     └── exported_model         // 从trainlog中的checkpoint中导出来的模型，EXPORT_DIR <br>
+```
