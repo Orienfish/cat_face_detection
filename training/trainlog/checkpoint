@@ -1,0 +1,6 @@
+model_checkpoint_path: "/home/robot/cat_dataset/training/trainlog/model.ckpt-29932"
+all_model_checkpoint_paths: "/home/robot/cat_dataset/training/trainlog/model.ckpt-27213"
+all_model_checkpoint_paths: "/home/robot/cat_dataset/training/trainlog/model.ckpt-27893"
+all_model_checkpoint_paths: "/home/robot/cat_dataset/training/trainlog/model.ckpt-28573"
+all_model_checkpoint_paths: "/home/robot/cat_dataset/training/trainlog/model.ckpt-29253"
+all_model_checkpoint_paths: "/home/robot/cat_dataset/training/trainlog/model.ckpt-29932"
