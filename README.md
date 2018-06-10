@@ -43,7 +43,7 @@ sudo ./test_cat.sh
 sudo ./tensorboard.sh
 ```
 The following picture shows the training record in tensorboard.
-![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/losses.png).  
+![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/pic/losses.png).  
 
 7. Export a trained model for inferences from saved checkpoints.See [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md).
 ```
@@ -55,7 +55,10 @@ sudo ./export.sh
 # Copy file to tensorflow/models/research/object_detection directory and run it
 sudo python my_object_detection.py
 ```
-One of the test results is showed below. <br>
+The test accuracy on tensorboard is shown below. <br>
+The precision for cat_face is 100% and for cat_eyes is 93.96%. Total precision is 96.98%. <br>
+![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/precision.png)
+One of the test results is shown below. <br>
 ![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg)
 
 ## File structure
@@ -92,4 +95,8 @@ One of the test results is showed below. <br>
 v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
 Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
-Trained for 30k times, costing 7h21min.
+Trained for 30k times, costing 7h21min. <br><br>
+
+v2 @2018.6.10 <br>
+Fix the evaluate bug. Due to the limit of GPU space, it's unable to run train_cat.sh and eval_cat.sh at the same time.
+Thus run eval_cat.sh for once after training. Record the testing precision.
