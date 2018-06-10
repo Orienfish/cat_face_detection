@@ -15,6 +15,7 @@ import zipfile
 import cv2
 from collections import defaultdict
 from io import StringIO
+
 # This is needed since the program is stored in the object_detection folder.
 sys.path.append("..")
 from object_detection.utils import ops as utils_ops
@@ -61,7 +62,8 @@ PATH_TO_TEST_IMAGES_DIR = os.path.join(PATH_TO_DIR, "images")
 PATH_TO_SAVE_IMAGES_DIR = os.path.join(PATH_TO_DIR, "results")
 if not os.path.isdir(PATH_TO_SAVE_IMAGES_DIR):
   os.makedirs(PATH_TO_SAVE_IMAGES_DIR)
-TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'cat.{}.jpg'.format(i)) for i in range(1, 100) ]
+# TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'cat.{}.jpg'.format(i)) for i in range(1, 100) ]
+TEST_IMAGE_PATHS = ["/home/robot/CatCamera_Master/server/upload_files/3.jpg"]
 
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
@@ -115,14 +117,74 @@ def run_inference_for_single_image(image, graph):
         output_dict['detection_masks'] = output_dict['detection_masks'][0]
   return output_dict
 
+'''
+one_face_detection
+Input: image - the object read from imread
+Return: [xmin, xmax, ymin, ymax] 
+'''
+def one_face_detection(image):
+    # check whether image is empty
+    if (image is None):
+    	print("The image is None!")
+    	return 1.0, 1.0, 1.0, 1.0
+    # Actual detection.
+    output_dict = run_inference_for_single_image(image, detection_graph)
+    # find the first cat face, i is the result index
+    i = 0
+    classes = output_dict['detection_classes'][0] 
+    while classes != 1:
+    	i += 1
+    	classes = output_dict['detection_classes'][i]
+    score = output_dict['detection_scores'][i]
+    # check the detection score
+    if score < 0.01:
+    	return 1.0, 1.0, 1.0, 1.0
+    # successfully detect a cat face
+    return output_dict['detection_boxes'][i]
+
+'''
+multiple_face_detection
+Input: image - the object read from imread
+Return: [[xmin, xmax, ymin, ymax], [xmin, xmax, ymin, ymax], ...]
+'''
+def multiple_face_detection(image):
+    # check whether image is empty
+    if (image is None):
+    	print("The image is None!")
+    	return 1.0, 1.0, 1.0, 1.0
+    # Actual detection.
+    output_dict = run_inference_for_single_image(image, detection_graph)
+    # find all cat faces, i is the index
+    i = 0
+    index = []
+    classes = output_dict['detection_classes'][0]
+    scores = output_dict['detection_scores'][0]
+    while scores > 0.01:
+    	if classes == 1: # detect cat face! 
+        	index.append(i)
+        # update
+    	i += 1
+    	classes = output_dict['detection_classes'][i]
+    	scores = output_dict['detection_scores'][i]
+    # no cat face detect!
+    if index is None:
+        return 1.0, 1.0, 1.0, 1.0
+    # successfully detect cat faces
+    res = []
+    for j in range(len(index)):
+	res.append(output_dict['detection_boxes'][j])
+    return res
+
 """
 main routine
 """
 def main():
   cnt = 0
   for image_path in TEST_IMAGE_PATHS:
+    print image_path
     # load image
     image_np = cv2.imread(image_path)
+    print(one_face_detection(image_np))
     # Actual detection.
     output_dict = run_inference_for_single_image(image_np, detection_graph)
     # Visualization of the results of a detection.
@@ -136,8 +198,13 @@ def main():
         use_normalized_coordinates=True,
         line_thickness=8)
     print("processing %s" %image_path)
+    # print(output_dict['detection_boxes'])
+    # print(output_dict['detection_classes'])
+    # print(output_dict['detection_scores'])
     # write back processed images
-    cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
+    # cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
+    cv2.imshow("img", image_np)
+    cv2.waitKey(0)
     cnt += 1
 
 if __name__ == '__main__':
