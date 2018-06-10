@@ -95,7 +95,7 @@ One of the test results is shown below. <br>
 v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
 Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
-Trained for 30k times, costing 7h21min. <br><br>
+Trained for 30k times, costing 7h21min. <br>
 
 v2 @2018.6.10 <br>
 Fix the evaluate bug. Due to the limit of GPU space, it's unable to run train_cat.sh and eval_cat.sh at the same time.
