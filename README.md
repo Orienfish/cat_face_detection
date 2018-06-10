@@ -72,15 +72,15 @@ One of the test results is showed below. <br>
 │   ├── train                // 80 .xml files for training.
 │   └── test                 // 20 .xml files for testing.
 ├── data                     // The .csv files and tfRecord generated from annotations.
-│   ├── train_labels.        // The .csv files for training dataset.
-│   ├── test_labels          // The .csv files for testing dataset.
+│   ├── train_labels.csv     // The .csv files for training dataset.
+│   ├── test_labels.csv      // The .csv files for testing dataset.
 │   ├── train.record         // The tfRecord for training dataset.
 │   └── teset.record         // The tfRecord for testing dataset.
 ├── images                   // 200 images from the original Dogs v.s. Cats dataset.
 ├── results                  // The resulting 100 pictures in testing.
 └── training                 // Training related files.
-    ├── label_map.pbtxt             // Label map with 2 labels.
-    ├── ssd_mobilnet_v1_cat.cig     // Training pipeline configuration.
+    ├── label_map.pbtxt                // Label map with 2 labels.
+    ├── ssd_mobilnet_v1_cat.config     // Training pipeline configuration.
     ├── ssd_mobilenet_v1_coco_2017_11_17.tar.gz  // The based model.
     ├── ssd_mobilenet_v1_coco_2017_11_17         // The untar file of .tar.gz. Contain the based model.
     ├── trainlog             // Checkpoint record and training tensorboard event record, TRAIN_DIR.
