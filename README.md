@@ -89,7 +89,7 @@ One of the test results is showed below. <br>
 ```
 
 ## VERSION RECORD
-v1 @2018.6.5
+v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
 Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
 Trained for 30k times, costing 7h21min.
