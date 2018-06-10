@@ -69,27 +69,27 @@ One of the test results is showed below. <br>
 ├── tensorflow.sh            // Start tensorboard. Can be called anywhere.
 ├── my_object_detection.py   // The python code for testing trained models.Should be called from tensorflow/models/research/object_detection directory.
 ├── annotations              // The hand labeled training and testing dataset. Only 100 in all.
-│   ├── train            // 80 .xml files for training.
-│   └── test             // 20 .xml files for testing.
+│   ├── train                // 80 .xml files for training.
+│   └── test                 // 20 .xml files for testing.
 ├── data                     // The .csv files and tfRecord generated from annotations.
-│   ├── train_labels.    // The .csv files for training dataset.
-│   ├── test_labels      // The .csv files for testing dataset.
-│   ├── train.record     // The tfRecord for training dataset.
-│   └── teset.record     // The tfRecord for testing dataset.
+│   ├── train_labels.csv     // The .csv files for training dataset.
+│   ├── test_labels.csv      // The .csv files for testing dataset.
+│   ├── train.record         // The tfRecord for training dataset.
+│   └── teset.record         // The tfRecord for testing dataset.
 ├── images                   // 200 images from the original Dogs v.s. Cats dataset.
 ├── results                  // The resulting 100 pictures in testing.
 └── training                 // Training related files.
-    ├── label_map.pbtxt          // Label map with 2 labels.
-    ├── ssd_mobilnet_v1_cat.cig     // Training pipeline configuration.
-    ├── ssd_mobilenet_v1_coco_2017_11_1ar.gz7.t  // The based model.
-    ├── ssd_mobilenet_v1_coco_2017_11_1      7   // The untar file of .tar.gz. Contain the based model.
-    ├── trainlog          // Checkpoint record and training tensorboard event record, TRAIN_DIR.
-    ├── evallog           // Testing tensorboard event record, TEST_DIR
-    └── exported_model    // Exported model from trainlog/ckpt, EXPORT_DIR
+    ├── label_map.pbtxt                // Label map with 2 labels.
+    ├── ssd_mobilnet_v1_cat.config     // Training pipeline configuration.
+    ├── ssd_mobilenet_v1_coco_2017_11_17.tar.gz  // The based model.
+    ├── ssd_mobilenet_v1_coco_2017_11_17         // The untar file of .tar.gz. Contain the based model.
+    ├── trainlog             // Checkpoint record and training tensorboard event record, TRAIN_DIR.
+    ├── evallog              // Testing tensorboard event record, TEST_DIR
+    └── exported_model       // Exported model from trainlog/ckpt, EXPORT_DIR
 ```
 
 ## VERSION RECORD
-v1 @2018.6.5
+v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
 Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
 Trained for 30k times, costing 7h21min.
