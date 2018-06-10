@@ -24,7 +24,7 @@ GPU related：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 ## 搭建步骤
 1. Install the Object Detection API of Tensorflow. See [Installation](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).  
 2. Download data of cat faces. The best option is [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats), which contains different pictures in different background and light conditions. The variance of dataset could help a lot in training.
-3. Labels cat faces and eyes with LabelImg on the dataset that downloard in 2. Make our own dataset in .xml files. Use [Raccoon](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) for reference.  
+3. Labels cat faces and eyes with LabelImg on the dataset that download in 2. Make our own dataset in .xml files. Use [Raccoon](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) for reference.  
 4. Using the self-developed script to tranform .xml files into .csv files and finally into tfRecord. Now we are ready for Tensorflow training.
 ```
 # From cat_dataset/ directory
@@ -69,23 +69,23 @@ One of the test results is showed below. <br>
 ├── tensorflow.sh            // Start tensorboard. Can be called anywhere.
 ├── my_object_detection.py   // The python code for testing trained models.Should be called from tensorflow/models/research/object_detection directory.
 ├── annotations              // The hand labeled training and testing dataset. Only 100 in all.
-│   ├── train               // 80 .xml files for training.
-│   └── test                // 20 .xml files for testing.
+│   ├── train            // 80 .xml files for training.
+│   └── test             // 20 .xml files for testing.
 ├── data                     // The .csv files and tfRecord generated from annotations.
-│   ├── train_labels.csv    // The .csv files for training dataset.
-│   ├── test_labels.csv     // The .csv files for testing dataset.
-│   ├── train.record        // The tfRecord for training dataset.
-│   └── teset.record        // The tfRecord for testing dataset.
+│   ├── train_labels.    // The .csv files for training dataset.
+│   ├── test_labels      // The .csv files for testing dataset.
+│   ├── train.record     // The tfRecord for training dataset.
+│   └── teset.record     // The tfRecord for testing dataset.
 ├── images                   // 200 images from the original Dogs v.s. Cats dataset.
 ├── results                  // The resulting 100 pictures in testing.
 └── training                 // Training related files.
-    ├── label_map.pbtxt         // la map with 2 labels.
-    ├── ssd_mobilnet_v1_cat.conf// Training pipeline configuration.
-    ├── ssd_mobilenet_v1_coco_2017_11_17.tar.// The based model.
-    ├── ssd_mobilenet_v1_coco_2017_11_17        The untar file of .tar.gz. Contain the based model.
-    ├── trainlog               Checkpoint record and training tensorboard event record, TRAIN_DIR.
-    ├── evallog                Testing tensorboard event record, TEST_DIR
-    └── exported_model         Exported model from trainlog/ckpt, EXPORT_DIR
+    ├── label_map.pbtxt          // Label map with 2 labels.
+    ├── ssd_mobilnet_v1_cat.cig     // Training pipeline configuration.
+    ├── ssd_mobilenet_v1_coco_2017_11_1ar.gz7.t  // The based model.
+    ├── ssd_mobilenet_v1_coco_2017_11_1      7   // The untar file of .tar.gz. Contain the based model.
+    ├── trainlog          // Checkpoint record and training tensorboard event record, TRAIN_DIR.
+    ├── evallog           // Testing tensorboard event record, TEST_DIR
+    └── exported_model    // Exported model from trainlog/ckpt, EXPORT_DIR
 ```
 
 ## VERSION RECORD
