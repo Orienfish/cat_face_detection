@@ -21,7 +21,7 @@ CUDA 9.0.176 <br>
 CuDNN 7.0 <br>
 GPU related：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 
-## 搭建步骤
+## Setup
 1. Install the Object Detection API of Tensorflow. See [Installation](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/installation.md).  
 2. Download data of cat faces. The best option is [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats), which contains different pictures in different background and light conditions. The variance of dataset could help a lot in training.
 3. Labels cat faces and eyes with LabelImg on the dataset that download in 2. Make our own dataset in .xml files. Use [Raccoon](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) for reference.  

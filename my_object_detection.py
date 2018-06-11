@@ -7,6 +7,9 @@ according to their own needs.
 """
 import numpy as np
 import os
+# not use GPU
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import six.moves.urllib as urllib
 import sys
 import tarfile
@@ -57,6 +60,7 @@ category_index = label_map_util.create_category_index(categories)
 
 # # Detection Files Paths
 # the path to test images and where to save the results
+"""
 PATH_TO_DIR = '/home/robot/cat_dataset'
 PATH_TO_TEST_IMAGES_DIR = os.path.join(PATH_TO_DIR, "images")
 PATH_TO_SAVE_IMAGES_DIR = os.path.join(PATH_TO_DIR, "results")
@@ -64,7 +68,7 @@ if not os.path.isdir(PATH_TO_SAVE_IMAGES_DIR):
   os.makedirs(PATH_TO_SAVE_IMAGES_DIR)
 # TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'cat.{}.jpg'.format(i)) for i in range(1, 100) ]
 TEST_IMAGE_PATHS = ["/home/robot/CatCamera_Master/server/upload_files/3.jpg"]
-
+"""
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
 
