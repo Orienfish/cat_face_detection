@@ -30,13 +30,13 @@ GPU related：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 6. Start the training process by calling self-developed script train_cat.sh. Monitor the process with tensorboard. Record checkpoints.
 7. Export a trained model for inferences from saved checkpoints.See [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md).
 8. It's test time! Write the resulting pictures into the 'result' folder.
-'''
+```
 # You can complete all the procedures above by executing the following command
 sudo ./run.sh
 # To view the training and testing result on tensorboard, please run:
 tensorboard.sh
 # Now you can view them on https://localhost:6066
-'''
+```
 
 
 ## Oberservations
@@ -55,7 +55,7 @@ One of the test results is shown below. <br>
 ├── xml_to_csv.py            // The python code called by generate_tfrecord.sh.
 ├── generate_tfrecord.py     // The python code called by generate_tfrecord.sh.
 ├── tensorboard.sh           // Start tensorboard. Can be called anywhere.
-├── my_object_detection.py   // The python code for testing trained models.Should be called from tensorflow/models/research/object_detection directory.
+├── my_object_detection.py   // The python code for testing trained models.Could be called anywhere
 ├── annotations              // The hand labeled training and testing dataset. Only 100 in all.
 │   ├── train                // 80 .xml files for training.
 │   └── test                 // 20 .xml files for testing.
@@ -85,3 +85,7 @@ Trained for 30k times, costing 7h21min. <br>
 v2 @2018.6.10 <br>
 Fix the evaluate bug. Due to the limit of GPU space, it's unable to run train_cat.sh and eval_cat.sh at the same time.
 Thus run eval_cat.sh for once after training. Record the testing precision.
+
+v3 @2018.6.13 <br>
+Combine generate_tfrecord.sh, train_cat.sh, eval_cat.sh and testing in to run.sh.
+There's no need to copy file to tensorflow directories now. Everything could run in the current path.
