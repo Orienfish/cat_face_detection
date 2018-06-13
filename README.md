@@ -41,12 +41,12 @@ tensorboard.sh
 
 ## Oberservations
 The following picture shows the training record in tensorboard.
-![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/pic/losses.png).
+![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/pic/losses.png) <br>
 The test accuracy on tensorboard is shown below. <br>
 The precision for cat_face is 100% and for cat_eyes is 93.96%. Total precision is 96.98%. <br>
-![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/precision.png)
+![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/precision.png) <br><br>
 One of the test results is shown below. <br>
-![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg)
+![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg) <br>
 
 ## File structure
 ```
@@ -76,7 +76,7 @@ One of the test results is shown below. <br>
     └── exported_model       // Exported model from trainlog/ckpt, EXPORT_DIR
 ```
 
-## VERSION RECORD
+## Version Record
 v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
 Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
