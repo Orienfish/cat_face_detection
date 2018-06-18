@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images</folder>
+	<filename>cat.66.jpg</filename>
+	<path>P:\Cat_Images_Train\Images\cat.66.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>499</width>
+		<height>382</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cat_face</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>303</xmin>
+			<ymin>79</ymin>
+			<xmax>423</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>
