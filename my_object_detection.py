@@ -91,10 +91,6 @@ def run_inference_for_single_image(image, graph):
         detection_masks_reframed = tf.cast(
             tf.greater(detection_masks_reframed, 0.5), tf.uint8)
         # Follow the convention by adding back the batch dimension
-t use GPU
-# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
         tensor_dict['detection_masks'] = tf.expand_dims(
             detection_masks_reframed, 0)
       image_tensor = tf.get_default_graph().get_tensor_by_name('image_tensor:0')
@@ -221,7 +217,7 @@ def main():
     # print(output_dict['detection_classes'])
     # print(output_dict['detection_scores'])
     # write back processed images
-    # cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
+    cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
     # cv2.imshow("img", image_np)
     # cv2.waitKey(0)
     cnt += 1
