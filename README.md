@@ -85,6 +85,7 @@ Trained for 30k times, costing 7h21min. <br>
 v2 @2018.6.10 <br>
 Fix the evaluate bug. Due to the limit of GPU space, it's unable to run train_cat.sh and eval_cat.sh at the same time.
 Thus run eval_cat.sh for once after training. Record the testing precision.
+Add 'max_evals: 1' to eval_config in /training/ssd_mobilenet_v1_cat.config.
 
 v3 @2018.6.13 <br>
 Combine generate_tfrecord.sh, train_cat.sh, eval_cat.sh and testing in to run.sh.
