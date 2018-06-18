@@ -7,6 +7,9 @@ according to their own needs.
 """
 import numpy as np
 import os
+# not use GPU
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 import six.moves.urllib as urllib
 import sys
 import tarfile
@@ -15,9 +18,7 @@ import zipfile
 import cv2
 from collections import defaultdict
 from io import StringIO
-# not use GPU
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
 # The models/research path is needed
 sys.path.append("/usr/local/lib/python2.7/dist-packages/tensorflow/models/research")
 from object_detection.utils import ops as utils_ops
@@ -135,9 +136,6 @@ def one_face_detection(image):
     return output_dict['detection_boxes'][i]
 
 '''
-# not use GPU
-# os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
-# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 multiple_face_detection
 Input: image - the object read from imread
 Return: [[xmin, xmax, ymin, ymax], [xmin, xmax, ymin, ymax], ...]
@@ -174,32 +172,17 @@ def multiple_face_detection(image):
 main routine
 """
 def main():
-  # generate testing and resulting path and mode
+  # generate testing and resulting path
   PATH_TO_TEST_IMAGES_DIR = sys.argv[1]
   PATH_TO_SAVE_IMAGES_DIR = sys.argv[2]
-  CPU_OR_GPU_MODE = sys.argv[3]
-  # NOTE!! == AND != IS USED TO JUDGE EQUALITY.
-  # IS AND IS NOT IS USED TO JUDGE WHTTHER THEY ARE THE SAME OBJECT!
-  # According to above, default is using cpu
-  if CPU_OR_GPU_MODE == "cpu": # use cpu
-    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
-    os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-  elif CPU_OR_GPU_MODE == "gpu": # use gpu
-    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
-  else: # not cpu and not gpu
-    print "wrong mode!"
-    sys.exit(1)
-
   if not os.path.isdir(PATH_TO_SAVE_IMAGES_DIR):
     os.makedirs(PATH_TO_SAVE_IMAGES_DIR)
-  # test all the images under PATH_TO_TEST_IMAGES_DIR
-  TEST_IMAGE_PATHS = os.listdir(PATH_TO_TEST_IMAGES_DIR)
+  TEST_IMAGE_PATHS = [ os.path.join(PATH_TO_TEST_IMAGES_DIR, 'cat.{}.jpg'.format(i)) for i in range(1, 100) ]
   # start testing iteration
   cnt = 0
   for image_path in TEST_IMAGE_PATHS:
     # load image
-    image_np = cv2.imread(os.path.join(PATH_TO_TEST_IMAGES_DIR, image_path))
+    image_np = cv2.imread(image_path)
     # Actual detection.
     output_dict = run_inference_for_single_image(image_np, detection_graph)
     # Visualization of the results of a detection.
@@ -217,9 +200,9 @@ def main():
     # print(output_dict['detection_classes'])
     # print(output_dict['detection_scores'])
     # write back processed images
-    cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
-    # cv2.imshow("img", image_np)
-    # cv2.waitKey(0)
+    # cv2.imwrite(os.path.join(PATH_TO_SAVE_IMAGES_DIR, 'cat.{}.jpg'.format(cnt)), image_np)
+    cv2.imshow("img", image_np)
+    cv2.waitKey(0)
     cnt += 1
 
 if __name__ == '__main__':

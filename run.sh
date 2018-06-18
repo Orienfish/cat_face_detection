@@ -1,12 +1,9 @@
 #!/bin/sh
-set -e # exit if any return with non-zero
-export PATH=$PATH:/home/robot/cocoapi/PythonAPI # add cocoapi to path, run this in terminal if coco import error
 ###################################################################
 # generate tfRecord for tensorflow training
 ###################################################################
 # Called by ./generate_tfrecord.sh in cat_dataset directory
 # define path variables
-# NO SPACE NEXT TO '='!!!!!!!
 TRAIN_XML_PATH=annotations/train
 TEST_XML_PATH=annotations/test
 TRAIN_CSV_PATH=data/train_labels.csv
@@ -21,7 +18,6 @@ python generate_tfrecord.py --csv_input=${TRAIN_CSV_PATH}  --output_path=${TRAIN
 python generate_tfrecord.py --csv_input=${TEST_CSV_PATH}  --output_path=${TEST_TFRECORD_PATH}
 echo "Finish tfRecord generation!"
 
-# concurrently run train, test and tensorboard
 ###################################################################
 # local training
 ###################################################################
@@ -33,50 +29,43 @@ PATH_TO_EVAL_DIR=/home/robot/cat_dataset/training/evallog/
 # train
 # ${PATH_TO_YOUR_PIPELINE_CONFIG} points to the pipeline config
 # ${PATH_TO_TRAIN_DIR} points to the directory in which training checkpoints and events will be written to
-# run this process in the background. use gpu:0. re-direct stdout and stderr to training/runlog/train.log
-CUDA_VISIBLE_DEVICES=0 python /usr/local/lib/python2.7/dist-packages/tensorflow/models/research/object_detection/train.py \
+python /usr/local/lib/python2.7/dist-packages/models/research/object_detection/train.py \
     --logtostderr \
     --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG} \
-    --train_dir=${PATH_TO_TRAIN_DIR} >training/runlog/train.log 2>&1 &
-echo "start training in the back!"
+    --train_dir=${PATH_TO_TRAIN_DIR}
+echo "Finish local training!"
+echo ""
 
 ###################################################################
-# evaluate
+# evaluate for only one time after training
 ###################################################################
 # ${PATH_TO_EVAL_DIR} points to the directory in which evaluation events will be saved
-# run this process in the background. use gpu:1. re-direct stdout and stderr to training/runlog/eval.log
-CUDA_VISIBLE_DEVICES=1 python /usr/local/lib/python2.7/dist-packages/tensorflow/models/research/object_detection/eval.py \
+python /usr/local/lib/python2.7/dist-packages/models/research/object_detection/eval.py \
     --logtostderr \
     --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG} \
     --checkpoint_dir=${PATH_TO_TRAIN_DIR} \
-    --eval_dir=${PATH_TO_EVAL_DIR} >training/runlog/eval.log 2>&1 &
-echo "start evaluating in the back!"
+    --eval_dir=${PATH_TO_EVAL_DIR}
+echo "Finish one-time evaluation!"
+echo ""
 
 ###################################################################
-# running tensorboard
+# This script is for exporting the trained model
 ###################################################################
-# Can be run any where
-PATH_TO_MODEL_DIRECTORY=/home/robot/cat_dataset/training/
-HOST=162.105.93.130
-PORT=6066
-
-# tensorboard
-# ${PATH_TO_MODEL_DIRECTORY} points to the directory that contains the train and eval directories
-# run this process in the background. re-direct stdout and stderr to training/runlog/tensorboard.log
-tensorboard --host=${HOST} --port=${PORT} --logdir=${PATH_TO_MODEL_DIRECTORY} >training/runlog/tensorboard.log 2>&1 &
-echo "tensorboard"
+# define path variables
+# note: the specific number is necessary!
+PATH_TO_TRAINED_MODEL=/home/robot/cat_dataset/training/trainlog/model.ckpt-29932 
+EXPORT_DIR=/home/robot/cat_dataset/training/exported_model/
+# export
+python /usr/local/lib/python2.7/dist-packages/models/research/object_detection/export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path ${PATH_TO_YOUR_PIPELINE_CONFIG} \
+    --trained_checkpoint_prefix ${PATH_TO_TRAINED_MODEL} \
+    --output_directory ${EXPORT_DIR}
+echo "Finish exporting models!"
+echo ""
 
 ###################################################################
-# search for the pid of train and eval process
+# Testing
 ###################################################################
-# ps -ef | grep 'tensorflow' | grep 'train.py' | grep -v 'grep'
-pid_train=$(ps -ef | grep 'tensorflow' | grep 'train.py' | grep -v 'grep' | awk '{print $2}')
-# ps -ef | grep 'tensorflow' | grep 'eval.py' | grep -v 'grep'
-pid_eval=$(ps -ef | grep 'tensorflow' | grep 'eval.py' | grep -v 'grep' | awk '{print $2}')
-echo "training pid is $pid_train, evaluating pid is $pid_eval"
-# wait for train process to terminate
-wait $pid_train 
-echo "training process $child exited!"
-# kill the eval process if necessary
-ps -ef | grep 'tensorflow' | grep 'eval.py' | grep -v 'grep' | awk '{print $2}' | xargs kill -9
-
+python my_object_detection.py /home/robot/cat_dataset/images /home/robot/cat_dataset/results
+echo "Finish testing!"
