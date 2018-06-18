@@ -41,12 +41,12 @@ tensorboard.sh
 
 ## Oberservations
 The following picture shows the training record in tensorboard.
-![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/pic/losses.png) <br>
+![Loss](https://github.com/Orienfish/cat_face_detection/blob/old_version/pic/losses.png) <br>
 The test accuracy on tensorboard is shown below. <br>
 The precision for cat_face is 100% and for cat_eyes is 93.96%. Total precision is 96.98%. <br>
-![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/precision.png) <br><br>
+![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/old_version/pic/precision.png) <br><br>
 One of the test results is shown below. <br>
-![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg) <br>
+![img](https://github.com/Orienfish/cat_face_detection/blob/old_version/results/cat.0.jpg) <br>
 
 ## File structure
 ```
