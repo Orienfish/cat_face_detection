@@ -27,34 +27,47 @@ GPU related：Quadro M4000 * 2, NVIDIA-SMI 390.25, Driver 390.25
 3. Labels cat faces and eyes with LabelImg on the dataset that download in 2. Make our own dataset in .xml files. Use [Raccoon](https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9) for reference.  
 4. Using the self-developed script to tranform .xml files into .csv files and finally into tfRecord. Now we are ready for Tensorflow training.
 5. Configure our own training pipeline, including label_map.pbtxt and ssd_mobilenet_v1_cat.config. Use official guide [Configuring the Object Detection Training Pipeline](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/configuring_jobs.md) for reference.  
-6. Start the training process by calling self-developed script train_cat.sh. Monitor the process with tensorboard. Record checkpoints.
-7. Export a trained model for inferences from saved checkpoints.See [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md).
-8. It's test time! Write the resulting pictures into the 'result' folder.
+6. Start the training process by calling self-developed script run.sh. The script run.sh complete works from step 4 and step 5. It convert the data automatically for you by calling generate_tfrecord.py and then trigger training, evaluating and tensorboard in background. It waits for the termination of
+training and kills evaluating process after it.
 ```
-# You can complete all the procedures above by executing the following command
+# To use it, simply execute the following command in cat_face_detection directory
 sudo ./run.sh
-# To view the training and testing result on tensorboard, please run:
-tensorboard.sh
-# Now you can view them on https://localhost:6066
+```
+
+7. Export a trained model for inferences from saved checkpoints.See [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md). *There are two steps you are responsible to do before exportation. Firstly, choose a checkpoint from your record and specify its number in training/trainlog/checkpoint. Then, fill the same number into export_and_test.sh, stick it at the tail of PATH_TO_TRAINED_MODEL.*
+This is a screenshot of the training/trainlog/checkpoint file after my modification.
+![checkpoint](https://github.com/Orienfish/cat_face_detection/blob/master/pic/checkpoint.png)
+
+8. It's test time! Write the resulting pictures into the 'result' folder. *You should specify to use 'cpu' or 'gpu' in line 28 of export_and_test.sh.* This is because we set the default mode of file my_object_detection.py to 'cpu' for speed in real applications. The script export_and_test.sh completes step 7 and step 
+```
+# To use it, simply execute the following command in cat_face_detection directory.
+# Note: You should specify the model number at two different places!
+sudo export_and_test.sh
 ```
 
 
 ## Oberservations
-The following picture shows the training record in tensorboard.
+The following picture shows the loss record in tensorboard. The orange line stands for training process, while the blue line represents evaluating.
+The big difference between training and evaluating reveals the existence of **overfitting**. This is the next problem to fix. <br>
+Here we trained for 23.95k times and costed 5h43min51s. <br>
 ![Loss](https://github.com/Orienfish/cat_face_detection/blob/master/pic/losses.png) <br>
+
 The test accuracy on tensorboard is shown below. <br>
-The precision for cat_face is 100% and for cat_eyes is 93.96%. Total precision is 96.98%. <br>
-![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/precision.png) <br><br>
+The maximum precision for cat_face is 95.00% and for cat_eyes is 94.74%. Maximum total precision is 94.35%. <br>
+![Accuracy](https://github.com/Orienfish/cat_face_detection/blob/master/pic/accuracy.png) <br><br>
 One of the test results is shown below. <br>
-![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.0.jpg) <br>
+![img](https://github.com/Orienfish/cat_face_detection/blob/master/results/cat.1.jpg) <br><br>
+
+Compared with old version, we can see that the increase in train set really upgrade the adaptability of the model. However, the increase in complexity of 
+test set lower down the evaluating accuracy. A number of images is detected with only one eye, which is not what we expected.
 
 ## File structure
 ```
 ├── README.md                // Help
-├── run.sh     				 // Transfrom .xml to tfRecord. Train, evaluate, export and test. Should be called in current path.
+├── run.sh     				 // Transfrom .xml to tfRecord. Train, evaluate and start tensorboard concurrently.
 ├── xml_to_csv.py            // The python code called by generate_tfrecord.sh.
 ├── generate_tfrecord.py     // The python code called by generate_tfrecord.sh.
-├── tensorboard.sh           // Start tensorboard. Can be called anywhere.
+├── export_and_test.sh       // Export and test the model after training.
 ├── my_object_detection.py   // The python code for testing trained models.Could be called anywhere
 ├── annotations              // The hand labeled training and testing dataset. Only 100 in all.
 │   ├── train                // 80 .xml files for training.
@@ -73,20 +86,28 @@ One of the test results is shown below. <br>
     ├── ssd_mobilenet_v1_coco_2017_11_17         // The untar file of .tar.gz. Contain the based model.
     ├── trainlog             // Checkpoint record and training tensorboard event record, TRAIN_DIR.
     ├── evallog              // Testing tensorboard event record, TEST_DIR
+    ├── runlog               // Log information of train, eval and tensorboard.
     └── exported_model       // Exported model from trainlog/ckpt, EXPORT_DIR
 ```
 
 ## Version Record
+v1-v3 are in branch old_version. v4 is in branch master.
+
 v1 @2018.6.5 <br>
 Used 80 images for training and 20 images for testing.
-Unable to run eval.py for unknown reasons. That's why the training/evallong directory is empty =_=.
-Trained for 30k times, costing 7h21min. <br>
+Unable to run eval.py for unknown reasons. That's why the training/evallog directory is empty =_=. <br>
+Trained for *30k* times, costing *7h21min*. <br>
 
 v2 @2018.6.10 <br>
 Fix the evaluate bug. Due to the limit of GPU space, it's unable to run train_cat.sh and eval_cat.sh at the same time.
-Thus run eval_cat.sh for once after training. Record the testing precision.
-Add 'max_evals: 1' to eval_config in /training/ssd_mobilenet_v1_cat.config.
+Thus run eval_cat.sh for once after training. Record the testing precision. <br>
+Add 'max_evals: 1' to eval_config in /training/ssd_mobilenet_v1_cat.config. <br>
 
 v3 @2018.6.13 <br>
 Combine generate_tfrecord.sh, train_cat.sh, eval_cat.sh and testing in to run.sh.
-There's no need to copy file to tensorflow directories now. Everything could run in the current path.
+There's no need to copy file to tensorflow directories now. Everything could run in the current path. <br>
+
+v4 @2018.6.20 <br>
+Update: used 240 images for training and 60 images for testing.
+Split the script into two files due to the checkpoint numbers that need to be specified before exportation of the model.
+**Overfitting** problems awaited to be fixed. <vr>

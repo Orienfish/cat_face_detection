@@ -26,9 +26,9 @@ echo "Finish tfRecord generation!"
 # local training
 ###################################################################
 # define path variables
-PATH_TO_YOUR_PIPELINE_CONFIG=/home/robot/cat_dataset/training/ssd_mobilenet_v1_cat.config
-PATH_TO_TRAIN_DIR=/home/robot/cat_dataset/training/trainlog/
-PATH_TO_EVAL_DIR=/home/robot/cat_dataset/training/evallog/
+PATH_TO_YOUR_PIPELINE_CONFIG=training/ssd_mobilenet_v1_cat.config
+PATH_TO_TRAIN_DIR=training/trainlog/
+PATH_TO_EVAL_DIR=training/evallog/
 
 # train
 # ${PATH_TO_YOUR_PIPELINE_CONFIG} points to the pipeline config
@@ -55,8 +55,8 @@ echo "start evaluating in the back!"
 ###################################################################
 # running tensorboard
 ###################################################################
-# Can be run any where
-PATH_TO_MODEL_DIRECTORY=/home/robot/cat_dataset/training/
+# run here in cat_dataset_new root directory
+PATH_TO_MODEL_DIRECTORY=training/
 HOST=162.105.93.130
 PORT=6066
 

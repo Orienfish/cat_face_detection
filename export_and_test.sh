@@ -5,9 +5,9 @@ set -e # exit if any return with non-zero
 ###################################################################
 # define path variables
 # note: the specific number is necessary!
-PATH_TO_YOUR_PIPELINE_CONFIG=/home/robot/cat_dataset/training/ssd_mobilenet_v1_cat.config
-PATH_TO_TRAINED_MODEL=/home/robot/cat_dataset/training/trainlog/model.ckpt-20883 
-EXPORT_DIR=/home/robot/cat_dataset/training/exported_model
+PATH_TO_YOUR_PIPELINE_CONFIG=training/ssd_mobilenet_v1_cat.config
+PATH_TO_TRAINED_MODEL=training/trainlog/model.ckpt-20883 
+EXPORT_DIR=training/exported_model
 # if export_dir exists, delete it
 if [ -d "$EXPORT_DIR" ]; then
     rm -rf "$EXPORT_DIR"
@@ -25,7 +25,7 @@ echo "Finish exporting models!"
 # Testing
 ###################################################################
 # total_test_cnt should be less equal than 2600
-python my_object_detection.py /home/robot/cat_dataset/images /home/robot/cat_dataset/results gpu
+python my_object_detection.py ./images ./results gpu
 echo "Finish testing!"
 
 
