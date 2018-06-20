@@ -33,18 +33,15 @@ training and kills evaluating process after it.
 # To use it, simply execute the following command in cat_face_detection directory
 sudo ./run.sh
 ```
-
 7. Export a trained model for inferences from saved checkpoints.See [Exporting a trained model for inference](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models.md). *There are two steps you are responsible to do before exportation. Firstly, choose a checkpoint from your record and specify its number in training/trainlog/checkpoint. Then, fill the same number into export_and_test.sh, stick it at the tail of PATH_TO_TRAINED_MODEL.*
 This is a screenshot of the training/trainlog/checkpoint file after my modification.
 ![checkpoint](https://github.com/Orienfish/cat_face_detection/blob/master/pic/checkpoint.png)
-
-8. It's test time! Write the resulting pictures into the 'result' folder. *You should specify to use 'cpu' or 'gpu' in line 28 of export_and_test.sh.* This is because we set the default mode of file my_object_detection.py to 'cpu' for speed in real applications. The script export_and_test.sh completes step 7 and step 
+8. It's test time! Write the resulting pictures into the 'result' folder. *You should specify to use 'cpu' or 'gpu' in line 28 of export_and_test.sh.* This is because we set the default mode of file my_object_detection.py to 'cpu' for speed in real applications. The script export_and_test.sh completes step 7 and step 8.
 ```
 # To use it, simply execute the following command in cat_face_detection directory.
 # Note: You should specify the model number at two different places!
 sudo export_and_test.sh
 ```
-
 
 ## Oberservations
 The following picture shows the loss record in tensorboard. The orange line stands for training process, while the blue line represents evaluating.
