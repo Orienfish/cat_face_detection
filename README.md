@@ -108,3 +108,6 @@ v4 @2018.6.20 <br>
 Update: used 240 images for training and 60 images for testing.
 Split the script into two files due to the checkpoint numbers that need to be specified before exportation of the model.
 **Overfitting** problems awaited to be fixed. <vr>
+    
+v5 @2018.6.22 <br>
+Change the l2 regularize weight from 0.00004 to 0.0001 but get no obvious improvement. The **overfitting** problem seem to be a more complicate problem.
