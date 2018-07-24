@@ -110,4 +110,4 @@ Split the script into two files due to the checkpoint numbers that need to be sp
 **Overfitting** problems awaited to be fixed. <vr>
     
 v5 @2018.6.22 <br>
-Change the l2 regularize weight from 0.00004 to 0.0001 but get no obvious improvement. The **overfitting** problem seem to be a more complicate problem.
+Change the l2 regularize weight from 0.00004 to 0.0001 but get no obvious improvement. The **overfitting** problem seems to be a more complicate one.
