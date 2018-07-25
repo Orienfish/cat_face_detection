@@ -6,7 +6,7 @@ set -e # exit if any return with non-zero
 # define path variables
 # note: the specific number is necessary!
 PATH_TO_YOUR_PIPELINE_CONFIG=training/ssd_mobilenet_v1_cat.config
-PATH_TO_TRAINED_MODEL=training/trainlog/model.ckpt-20883 
+PATH_TO_TRAINED_MODEL=training/trainlog/model.ckpt-17416 
 EXPORT_DIR=training/exported_model
 # if export_dir exists, delete it
 if [ -d "$EXPORT_DIR" ]; then

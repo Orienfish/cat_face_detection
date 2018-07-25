@@ -31,153 +31,153 @@ INFO:tensorflow:depth of additional conv before box predictor: 0
 INFO:tensorflow:depth of additional conv before box predictor: 0
 INFO:tensorflow:depth of additional conv before box predictor: 0
 INFO:tensorflow:depth of additional conv before box predictor: 0
-2018-06-22 09:44:25.807418: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2018-06-22 09:44:25.986277: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1212] Found device 0 with properties: 
+2018-07-25 00:39:35.552661: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2018-07-25 00:39:35.695748: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1212] Found device 0 with properties: 
 name: Quadro M4000 major: 5 minor: 2 memoryClockRate(GHz): 0.7725
 pciBusID: 0000:03:00.0
-totalMemory: 7.93GiB freeMemory: 5.42GiB
-2018-06-22 09:44:25.986314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 09:44:26.559824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5191 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+totalMemory: 7.93GiB freeMemory: 7.54GiB
+2018-07-25 00:39:35.695781: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 00:39:35.905156: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7283 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
 INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-0
 INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-0
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 09:54:26.000406: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 09:54:26.000606: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-678
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-678
+2018-07-25 00:49:35.664096: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 00:49:35.664237: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-686
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-686
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:04:26.192755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:04:26.192887: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-1367
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-1367
+2018-07-25 00:59:35.845549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 00:59:35.845735: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-1384
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-1384
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:14:26.391847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:14:26.391986: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2058
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2058
+2018-07-25 01:09:35.996775: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:09:35.996923: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2082
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2082
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:24:26.587641: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:24:26.587816: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2746
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2746
+2018-07-25 01:19:36.158332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:19:36.158481: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2778
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-2778
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:34:26.718212: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:34:26.718426: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-3435
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-3435
+2018-07-25 01:29:36.235520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:29:36.235742: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-3475
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-3475
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:44:26.840551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:44:26.840730: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4125
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4125
+2018-07-25 01:39:36.412233: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:39:36.412395: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4173
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4173
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 10:54:27.039559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 10:54:27.039795: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4815
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4815
+2018-07-25 01:49:36.543681: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:49:36.543911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4870
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-4870
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:04:27.203583: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:04:27.203730: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-5504
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-5504
+2018-07-25 01:59:36.726483: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 01:59:36.726667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-5566
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-5566
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:14:27.403467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:14:27.403638: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6193
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6193
+2018-07-25 02:09:36.875471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:09:36.875720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6264
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6264
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:24:27.587504: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:24:27.587644: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6883
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6883
+2018-07-25 02:19:37.065807: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:19:37.065992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6961
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-6961
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:34:27.787656: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:34:27.787780: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-7572
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-7572
+2018-07-25 02:29:37.250230: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:29:37.250421: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-7657
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-7657
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:44:27.954639: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:44:27.954846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8262
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8262
+2018-07-25 02:39:37.442224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:39:37.442375: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8355
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8355
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 11:54:28.105251: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 11:54:28.105381: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8952
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-8952
+2018-07-25 02:49:37.640774: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:49:37.640944: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9051
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9051
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:04:28.208208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:04:28.208498: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9641
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9641
+2018-07-25 02:59:37.853363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 02:59:37.853528: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9748
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-9748
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:14:28.383843: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:14:28.384034: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-10331
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-10331
+2018-07-25 03:09:37.971451: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:09:37.971598: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-10445
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-10445
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:24:28.583866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:24:28.584007: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11022
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11022
+2018-07-25 03:19:38.141566: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:19:38.141731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11141
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11141
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:34:28.765925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:34:28.766166: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 183 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11710
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11710
+2018-07-25 03:29:38.341065: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:29:38.341202: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11838
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-11838
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:44:28.859624: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:44:28.859809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1729 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-12398
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-12398
+2018-07-25 03:39:38.522492: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:39:38.522747: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-12535
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-12535
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 12:54:28.960211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 12:54:28.960417: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13086
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13086
+2018-07-25 03:49:38.684362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:49:38.684550: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13232
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13232
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:04:29.067500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:04:29.067656: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13772
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13772
+2018-07-25 03:59:38.850018: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 03:59:38.850265: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13930
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-13930
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:14:29.244598: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:14:29.244811: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-14458
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-14458
+2018-07-25 04:09:39.063525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:09:39.063732: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-14627
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-14627
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:24:29.344077: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:24:29.344251: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15143
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15143
+2018-07-25 04:19:39.237486: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:19:39.237702: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15324
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15324
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:34:29.521796: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:34:29.521965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15829
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-15829
+2018-07-25 04:29:39.413315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:29:39.413530: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16021
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16021
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:44:29.721928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:44:29.722133: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16516
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16516
+2018-07-25 04:39:39.594070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:39:39.594230: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16719
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-16719
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 13:54:29.898057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 13:54:29.898351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17201
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17201
+2018-07-25 04:49:39.616747: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:49:39.616977: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17416
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17416
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 14:04:30.085903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 14:04:30.086093: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17887
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-17887
+2018-07-25 04:59:39.813976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 04:59:39.814140: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18112
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18112
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 14:14:30.258595: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 14:14:30.258789: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18573
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18573
+2018-07-25 05:09:39.993424: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 05:09:39.993586: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18810
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-18810
 WARNING:root:image 0 does not have groundtruth difficult flag specified
-2018-06-22 14:24:30.434930: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
-2018-06-22 14:24:30.435090: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 1754 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-19257
-INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-19257
+2018-07-25 05:19:40.189558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1312] Adding visible gpu devices: 0
+2018-07-25 05:19:40.189744: I tensorflow/core/common_runtime/gpu/gpu_device.cc:993] Creating TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 41 MB memory) -> physical GPU (device: 0, name: Quadro M4000, pci bus id: 0000:03:00.0, compute capability: 5.2)
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-19505
+INFO:tensorflow:Restoring parameters from training/trainlog/model.ckpt-19505
 WARNING:root:image 0 does not have groundtruth difficult flag specified

@@ -34,9 +34,9 @@ from utils import visualization_utils as vis_util
 # ## Variables
 # Any model exported using the `export_inference_graph.py` tool can be loaded here simply by changing `PATH_TO_CKPT` to point to a new .pb file.  
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
-PATH_TO_CKPT = '/home/robot/cat_dataset_new/training/exported_model/frozen_inference_graph.pb'
+PATH_TO_CKPT = 'training/exported_model/frozen_inference_graph.pb'
 # List of the strings that is used to add correct label for each box.
-PATH_TO_LABELS = '/home/robot/cat_dataset_new/training/label_map.pbtxt'
+PATH_TO_LABELS = 'training/label_map.pbtxt'
 # num of classes: cat_face and cat_eyes
 NUM_CLASSES = 2
 

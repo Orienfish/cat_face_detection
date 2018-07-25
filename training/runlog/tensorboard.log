@@ -1,5 +1,3 @@
 /usr/local/lib/python2.7/dist-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
   from ._conv import register_converters as _register_converters
 TensorBoard 1.6.0 at http://162.105.93.130:6066 (Press CTRL+C to quit)
-W0623 14:34:02.465852 Reloader plugin_event_multiplexer.py:203] Deleting accumulator 'trainlog'
-W0623 14:34:02.466597 Reloader plugin_event_multiplexer.py:203] Deleting accumulator 'evallog'
